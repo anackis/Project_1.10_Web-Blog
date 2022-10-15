@@ -45,17 +45,20 @@ app.get("/test1/:test2", function(req, res) {
 	console.log(req.params.test2);
 	const postCheck = _.lowerCase(req.params.test2) ;
 	
+	
 	allPosts.forEach(function(post) {
 		const storedTitle = _.lowerCase(post.title) ;
 
 		if (storedTitle === postCheck) {
-			res.render("test2", {
+			res.render("post", {
+				title: post.title , 
+				content: post.content
 			});
-		} else {
-			console.log("Not Passed");
-		}
+		} 
 	});
 });
+
+
 
 app.post("/compose", function(req, res) {
 	const postBlog = {
@@ -64,6 +67,7 @@ app.post("/compose", function(req, res) {
 	};
 	allPosts.push(postBlog);
 	res.redirect("/");
+
 });
 
 

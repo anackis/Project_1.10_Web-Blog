@@ -8,12 +8,14 @@
 
 
 
-<%console.log(allPosts);%>
 
 <% allPosts.forEach(function(post) { %>
 
     <h2> <%= post.title %> </h2>
-    <p> <%= post.content %> </p>
+    <p>
+        <%= post.content.substring(0, 100) + "..." %> 
+        <a href="/test1/<%= post.title %>">Read More...</a> 
+    </p>
    
 
 <% }); %>
