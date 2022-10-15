@@ -11,6 +11,19 @@
     font-size: 12px;
     letter-spacing: 5px;
 }
+
+.navbar a {
+    display: inline-block;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+}
+.links a {
+    margin-right: 30px;
+}
+
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
